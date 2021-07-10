@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hibiscus 🌺</title>
+    <style>
+      h1 {
+        text-align: center;
+        color: red;
+        border: 1px solid red;
+        line-height: 30px;
+        padding: 10px;
+        border-radius: 4px;
+      }
+
+      h2 {
+        text-align: center;
+        color: green;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        border-radius: 50px;
+        border: 1px solid red;
+      }
+
+      p {
+        line-height: 1.5;
+        font-size: 15px;
+      }
+
+      .learn-more {
+        cursor: pointer;
+        text-decoration: none;
+        color: red;
+      }
+      .learn-more:hover {
+        text-decoration: underline;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 15px 20px;
+        font-size: 18px;
+        background: red;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.3);
+        transition: all 200ms ease-in-out;
+        outline: none;
+      }
+
+      button:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
+      .footer {
+        text-align: center;
+        opacity: 0.7;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px 60px;
+        background-color: antiquewhite;
+        border-radius: 10px;
+      }
+
+      .counter-container {
+        text-align: center;
+      }
+
+      .decrement-button {
+        display: inline;
+        margin: 10px;
+      }
+      .increment-button {
+        display: inline;
+        margin: 10px;
+      }
+      .counter-label {
+        display: inline;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>I love Hibiscus</h1>
+      <h2>Especially Red Color</h2>
+
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Hibiscus_Brilliant.jpg/1280px-Hibiscus_Brilliant.jpg"
+        target="_blank"
+        width="300"
+      />
+
+      <p>
+        <strong>Hibiscus</strong> is a genus of flowering plants in the mallow
+        family, <em>Malvaceae</em>. The genus is quite large, comprising several
+        hundred species that are native to warm temperate, subtropical and
+        tropical regions throughout the world.
+      </p>
+
+      <a
+        href="https://en.wikipedia.org/wiki/Hibiscus"
+        target="_blank"
+        class="learn-more"
+      >
+        Learn more...😊 </a
+      ><br />
+
+      <div class="counter-container">
+        <button class="decrement-button">-</button>
+        <span class="counter-label">1</span>
+        <button class="increment-button">+</button>
+      </div>
+
+      <button class="buy-hibiscus">👉 Buy Hibiscus Plant</button>
+
+      <p class="footer">
+        This page was build by <em>Bhuvaneswari Vimalraj</em>
+      </p>
+    </div>
+    <script>
+      function buy() {
+        let customerName = prompt("What is your name?");
+
+        if (!customerName) {
+          return;
+        }
+
+        let email = prompt("What is your email address?");
+
+        if (!email) {
+          return;
+        }
+
+        // let pots = prompt("How many flower pots 🌺 you want?");
+
+        // if (!pots) {
+        //   return;
+        // }
+
+        let pots = document.querySelector(".counter-label").innerText;
+
+        alert(
+          "Thank you, " +
+            customerName +
+            "!\nWe will be in touch with you through " +
+            email +
+            "...\nWe'll be sending you " +
+            pots +
+            " Hibiscus flower pots 🌺🌺🌺"
+        );
+      }
+
+      let buyButton = document.querySelector(".buy-hibiscus");
+      buyButton.addEventListener("click", buy);
+
+      function incrementCounter() {
+        let counter = document.querySelector(".counter-label").innerText;
+        counter = +counter + 1;
+        document.querySelector(".counter-label").innerText = counter;
+      }
+      let incrementButton = document.querySelector(".increment-button");
+      incrementButton.addEventListener("click", incrementCounter);
+
+      function decrementCounter() {
+        let counter = document.querySelector(".counter-label").innerText;
+        if (counter === "1") {
+          return;
+        }
+        counter = +counter - 1;
+        document.querySelector(".counter-label").innerText = counter;
+      }
+      let decrementButton = document.querySelector(".decrement-button");
+      decrementButton.addEventListener("click", decrementCounter);
+    </script>
+  </body>
+</html>
